@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-bottom: 60px;
+    background-color: #161616;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-size: 24px;
+}
+
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    background-color: #323232;
+    color: rgb(255 255 255);
+    z-index: 1000;
+}
+
+.navbar-nav a{
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+.bgNav{
+    background-color: #c7897b !important;
+}
+
+.leftBg{
+    background: #c7897b;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.boxPro{
+    margin-bottom:30px;
+    transition: all 0.5s ease 0s;
+}
+
+
+.boxPro img{
+height: 200px;
+width: 100%;
+border-radius: 5px;
+}
+
+.boxPro .title{
+    font-weight: 600;
+    color: rgb(149 149 149);
+    font-size: 14px;
+    margin-top: 10px;
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.boxPro p{
+    margin-bottom: 0;
+}
+
+.boxPro .btn{
+    background: #343434;
+    color: #fff;
+}
+
+.catList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.catList li{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boxPro .PriceName{
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #c7897b;
+}
+
+.light-bg {
+    background: #f5f5f5;
+}
+
+.boxCart{
+    box-shadow: 0 0 20px rgb(235 235 235 / 15%);
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.boxCart .btn{
+    background-color: #c7897b;
+    border: 1px solid #c7897b;
+}
+
+.rightBg{
+    padding: 0px 20px;
+}
+
+.rightBg h2{
+  color: #c7897b;
+  padding: 0 10px;
+  font-size: 32px;
+}
+
+.productItem{
+    height: 100%;
+    margin: 0 10px;
+}
+
+.productItem img:hover{
+    box-shadow: 0 0 20px rgba(233, 233, 233, 0.15);
+   }
+
+.productName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.productName h2{
+    color: #c7897b;
+    font-size: 32px;
+}
+
+.productName p{
+    color: #959595;
+    text-align: center;
+}
+
+.cartHead{
+    color: #c7897b;
+}
