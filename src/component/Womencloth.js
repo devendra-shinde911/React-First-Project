@@ -1,18 +1,25 @@
 import React,{useEffect, useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { addInCart } from '../redux/slice/cartSlice';
 
 export default function Womencloth() {
-
+var ans = useSelector(state=> state.filter.categoryValue);
 const [Womencloth, setWomencloth] = useState([])
-
+const dispatch = useDispatch();
 useEffect(() => {
 
+  var apiPath = `https://fakestoreapi.com/products/category/women's clothing`
 
-  fetch(`https://fakestoreapi.com/products/category/women's clothing`)
+  fetch(apiPath)
   .then(response => response.json())
   .then(data =>{
     setWomencloth(data)
   })
-}, [])
+}, [ans])
+
+const handleAddToCart = (item) => {
+  dispatch(addInCart(item));
+};
 
   return (
    
@@ -25,10 +32,10 @@ useEffect(() => {
         {
             Womencloth && Womencloth.map(val=>
                 <div className='col-3 boxPro'>
-                    <img src={val.image} className='img-fluid' alt="womens" style={{ height: '300px' }}/>
+                    <img src={val.image} className='img-fluid' alt="womens" style={{ height: '300px' }} />
                     <p className='title'>{val.title}</p>
                     <p className='PriceName'>Rs.{val.price}</p>                                      
-                    <button className='btn'>Add to Cart</button>
+                    <button className='btn' onClick={()=>handleAddToCart(val)}>Add to Cart</button>
                 </div>
             )
         }

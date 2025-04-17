@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function Header() {
 
   const cartItems = useSelector(state => state.cart.cartItems); 
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0); 
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
    <>

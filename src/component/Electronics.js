@@ -1,18 +1,27 @@
 import React,{useEffect, useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { addInCart } from '../redux/slice/cartSlice';
 
 export default function Electronics() {
-
+var ans = useSelector(state=> state.filter.categoryValue);
 const [electronic, setElectronic] = useState([])
+const dispatch = useDispatch();
+
 
 useEffect(() => {
 
+  var apiPath = 'https://fakestoreapi.com/products/category/electronics'
 
-  fetch('https://fakestoreapi.com/products/category/electronics')
+  fetch(apiPath)
   .then(response => response.json())
   .then(data =>{
      setElectronic(data)
   })
-}, [])
+}, [ans])
+
+const handleAddToCart = (item) => {
+  dispatch(addInCart(item));
+};
 
   return (
    
@@ -26,16 +35,14 @@ useEffect(() => {
         {
             electronic && electronic.map(val=>
                 <div className='col-3 boxPro'>
-                    <img src={val.image} className='img-fluid'/>
+                    <img src={val.image} className='img-fluid' alt=""/>
                     <p className='title'>{val.title}</p>
                     <p className='PriceName'>Rs.{val.price}</p>                                      
-                    <button className='btn'>Add to Cart</button>
+                    <button className='btn' onClick={() => handleAddToCart(val)}>Add to Cart</button>
                 </div>
             )
         }
     </div>
     </div>
-
-
   )
 }

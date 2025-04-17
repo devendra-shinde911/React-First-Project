@@ -1,18 +1,24 @@
 import React,{useEffect, useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { addInCart } from '../redux/slice/cartSlice';
 
 export default function Jewellery() {
-
+var ans = useSelector(state=> state.filter.categoryValue);
 const [jewellery, setJewellery] = useState([])
-
+const dispatch = useDispatch();
 useEffect(() => {
 
-
-  fetch('https://fakestoreapi.com/products/category/jewelery')
+  var apiPath = 'https://fakestoreapi.com/products/category/jewelery'
+  fetch(apiPath)
   .then(response => response.json())
   .then(data =>{
      setJewellery(data)
   })
-}, [])
+}, [ans])
+
+const handleAddToCart = (item) => {
+  dispatch(addInCart(item));
+};
 
   return (
    
@@ -25,10 +31,10 @@ useEffect(() => {
         {
             jewellery && jewellery.map(val=>
                 <div className='col-3 boxPro'>
-                    <img src={val.image} className='img-fluid'/>
+                    <img src={val.image} className='img-fluid' alt=""/>
                     <p className='title'>{val.title}</p>
                     <p className='PriceName'>Rs.{val.price}</p>                                      
-                    <button className='btn'>Add to Cart</button>
+                    <button className='btn' onClick={()=>handleAddToCart(val)}>Add to Cart</button>
                 </div>
             )
         }
