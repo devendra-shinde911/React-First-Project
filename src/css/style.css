@@ -35,6 +35,9 @@ h2{
 }
 .bgNav{
     background-color: #c7897b !important;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
 
 .leftBg{
@@ -150,4 +153,22 @@ border-radius: 5px;
 
 .cartHead{
     color: #c7897b;
+}
+
+.cartImg{
+    max-width: 100%;
+    width: 150px;
+}
+
+
+ .cartButn {
+        border: 1px solid #c7897b;
+        padding: 5px 10px;
+        border-radius: 25px;
+        display: flex;
+        margin-bottom: 10px;  
+}
+
+.cartButn span {
+    margin: 0 10px;
 }
