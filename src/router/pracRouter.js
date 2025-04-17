@@ -6,6 +6,7 @@ import Home from "../component/Home";
 import Jewellery from "../component/Jewellery";
 import Menscloth from "../component/Menscloth";
 import Womencloth from "../component/Womencloth";
+import Singleproduct from "../component/Singleproduct"
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
             element: <Cart/>
            
          },
+
+         {
+            path: "singleproduct/:proid", 
+            element: <Singleproduct />
+          }
 
        ]
    }
