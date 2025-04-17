@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { addInCart } from '../redux/slice/cartSlice';
+import { Link } from 'react-router-dom';
 
 export default function Womencloth() {
 var ans = useSelector(state=> state.filter.categoryValue);
@@ -32,7 +33,9 @@ const handleAddToCart = (item) => {
         {
             Womencloth && Womencloth.map(val=>
                 <div className='col-3 boxPro'>
-                    <img src={val.image} className='img-fluid' alt="womens" style={{ height: '300px' }} />
+                   <Link to={`/singleproduct/${val.id}`}>
+                   <img src={val.image} className='img-fluid' style={{ height: '300px' }} alt=""/>
+                    </Link>
                     <p className='title'>{val.title}</p>
                     <p className='PriceName'>Rs.{val.price}</p>                                      
                     <button className='btn' onClick={()=>handleAddToCart(val)}>Add to Cart</button>
