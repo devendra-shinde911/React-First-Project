@@ -172,3 +172,16 @@ border-radius: 5px;
 .cartButn span {
     margin: 0 10px;
 }
+
+.singlePro h2{
+    color: #c7897b;
+    font-size: 32px;
+  }
+
+  .singlePro h4{
+      color: #fff;
+  }
+
+  .singlePro p{
+      color: #959595;;
+  }
